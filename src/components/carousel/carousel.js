@@ -1,20 +1,18 @@
 import "./carousel.scss";
 import { useState } from "react";
 
-export default function Carousel({slide}) {
+export default function Slideshow({slide}) {
     
-    const [current, setCurrent] = useState(0); //je définie l'index du premier slide à 0
-    const length = slide.length; //longueur du tableau de slides
+    const [current, setCurrent] = useState(0);
+    const length = slide.length; 
     const nbrNext = current + 1;
     const nbrPrev = current - 1 ;
   
-    /**Function pour l'image precedente */
     const nextImage = () => {
-      setCurrent(current === length - 1 ? 0 : nbrNext); // on repart au premier slide quand on arrive au dernier
+      setCurrent(current === length - 1 ? 0 : nbrNext); 
     };
-    /**Function pour l'image suivante */
     const prevImage = () => {
-      setCurrent(current === 0 ? length - 1 : nbrPrev); // on repart au dernier slide quand on est au premier
+      setCurrent(current === 0 ? length - 1 : nbrPrev); 
     };
   
     

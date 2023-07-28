@@ -2,11 +2,12 @@ import "./card.scss";
 import Navbar from "../../components/navbar/navbar"; 
 import Footer from "../../components/footer/footer"; 
 import Tags from "../../components/tags/tags";
-import Carousel from "../../components/carousel/carousel";
+import Slideshow from "../../components/carousel/carousel";
 import Host from "../../components/host/host";
 import Rate from "../../components/rate/rate";
-import Data from "../../data/data.json"
-import { useParams, Navigate } from "react-router-dom";
+import Collapse from "../../components/collapse/collapse";
+import Data from "../../data/data.json";
+import { useParams, useNavigate, Navigate } from "react-router-dom";
 
 import "./card.scss";
 
@@ -17,9 +18,18 @@ export default function Home() {
     const tagsHome = data.tags.map((tags, index) => {
         return <Tags key={index} name={tags} />
     });
+    const equipements = data?.equipments.map((equipement, i) => {
+        return (
+          <ul key={i}>
+            <li>{equipement}</li>
+          </ul>
+        );
+      });
+      let navigate = useNavigate();
     
     if(!data) {
-        <Navigate replace to="/about" />
+        navigate("/*");
+        <Navigate to="/*" />
     }
     else {
         return (
@@ -27,7 +37,7 @@ export default function Home() {
                 <Navbar />
                 <main>
                     <section className="cont-carrousel">
-                        <Carousel slide={data.pictures}/>
+                        <Slideshow slide={data.pictures}/>
                     </section>
                     <section className="cont-title-host">
                         <div className="cont-title">
@@ -43,7 +53,13 @@ export default function Home() {
                         <Rate score={data.rating}/>
                     </section>
                     <section className="cont-collapse">
-
+                        <div className="description">
+                            <Collapse title="Description" content={data.description}/>
+                        </div>
+                        <div className="equipement">
+                            <Collapse title="Équipements" content={equipements}/>
+                        </div>
+                        
                     </section>
                 
                 

@@ -1,23 +1,17 @@
 import "./collapse.scss";
-import dataAbout from '../../data/data_about.json';
-import ItemCollapse from "./itemCollapse";
+import { useState } from "react"
 
-
-export default function Collapse () {
-
-
-
-
-    return <div className="wrapper">
-        <div className="accordion">
-            {
-                dataAbout.map((item, e) => (
-                <ItemCollapse item={item} />
-                    
-                ))
-            }
-
+export default function Collapse({title, content}) {
+    const [selected, setSelected] = useState(false);
+    const toggle = () => setSelected(!selected)
+    return (
+        <div className="item">
+        <div className="title" onClick={() => toggle()}>
+            <h3>{title}</h3>
+            <span>{selected  ? <i class="fa-solid fa-chevron-up"></i> : <i class="fa-solid fa-chevron-down"></i>}</span>
         </div>
+        <div className={selected ? 'content show' : 'content'}><p>{content}</p></div>
     </div>
-  };
+    )
+}
   

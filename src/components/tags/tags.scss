@@ -1,0 +1,23 @@
+.tags-cont {
+    display: flex;
+    gap: 15px;
+    .tag-background {
+        background: #ff6060;
+        width: 10.1875rem;
+        height: 2.0625rem;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .tag {
+            
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border-radius: 15px;
+        }
+    }
+
+        
+    }
+    

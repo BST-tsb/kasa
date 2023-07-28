@@ -1,4 +1,4 @@
-
+import "./rate.scss";
 export default function Rate(data) {
     
     const score = data.score;
@@ -7,9 +7,9 @@ export default function Rate(data) {
       <div className="rate-contenair">
         {notes.map((note) =>
           score >= note ? (
-            <i key={note} className="fa-solid fa-star grey"></i>
-          ) : (
             <i key={note} className="fa-solid fa-star red"></i>
+          ) : (
+            <i key={note} className="fa-solid fa-star grey"></i>
           )
         )}
       </div>
