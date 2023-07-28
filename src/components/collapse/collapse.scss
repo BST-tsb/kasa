@@ -1,0 +1,38 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.accordion {
+    width: 1023px;
+}
+.item {
+    background-color: #FF6060;
+    margin-bottom: 30px;
+    width: 100%;
+    border-radius: 10px;
+}
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin: 0 10px 0 10px;
+}
+.item:nth-child(1) {
+    margin-top: 30px;
+}
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0,1,0,1);
+    color: #FF6060;
+    background-color: #F6F6F6;
+}
+.content.show {
+    max-height: 2000px;
+    transition: all 0.3s cubic-bezier(1,0,1,0);
+}
+.content p {
+    margin: 20px;
+}

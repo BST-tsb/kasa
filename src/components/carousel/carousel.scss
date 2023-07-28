@@ -1,0 +1,28 @@
+.cont-slide {
+    position: relative;
+    .left-Arrow {
+        position: absolute;
+        left: 25px;
+        top: 40%;
+        color: white;
+        font-size: 4.95rem;
+    }
+    .right-Arrow {
+        position: absolute;
+        right: 25px;
+        top: 40%;
+        color: white;
+        font-size: 4.95rem;
+    }
+    .span-slide {
+        position: absolute;
+        left: 50%;
+        bottom: 30px;
+        color: white;
+    }
+    .img-slide {
+        height: 25.9375rem;
+        width: 100%;
+    }
+
+}

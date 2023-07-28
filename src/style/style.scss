@@ -1,0 +1,9 @@
+@import './mixin/mix.scss';
+@import './variable/var.scss';
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+* {
+    object-fit: cover;
+}
