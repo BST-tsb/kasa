@@ -5,11 +5,23 @@ header {
     margin-bottom: 30px;
     .container-img {
         width: 210px;
+        @media (max-width: 767.98px) {
+            width: 145px;
+        }
         img {
             width: 100%;
         }
     }
     .navbar {
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 500;
+        .active {
+            border-bottom: 1px solid #FF6060;
+        }
+        @media (max-width: 767.98px) {
+            font-size: 0.75rem;;
+        }
         .head-list {
             list-style-type: none;
             margin: 0;

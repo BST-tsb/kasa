@@ -7,7 +7,8 @@ import Host from "../../components/host/host";
 import Rate from "../../components/rate/rate";
 import Collapse from "../../components/collapse/collapse";
 import Data from "../../data/data.json";
-import { useParams, useNavigate, Navigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 import "./card.scss";
 
@@ -15,7 +16,15 @@ export default function Home() {
     const { id } = useParams();
 
     const data = Data.find((logement) => logement.id === id);
-    const tagsHome = data.tags.map((tags, index) => {
+    let navigate = useNavigate();
+    useEffect(()=>{
+        if(!data) {
+            navigate("/Error");
+          }
+    },[data, navigate])
+      
+      
+    const tagsHome = data?.tags.map((tags, index) => {
         return <Tags key={index} name={tags} />
     });
     const equipements = data?.equipments.map((equipement, i) => {
@@ -25,13 +34,9 @@ export default function Home() {
           </ul>
         );
       });
-      let navigate = useNavigate();
+      
     
-    if(!data) {
-        navigate("/*");
-        <Navigate to="/*" />
-    }
-    else {
+    if(data) {
         return (
             <div className="home">
                 <Navbar />
@@ -39,19 +44,23 @@ export default function Home() {
                     <section className="cont-carrousel">
                         <Slideshow slide={data.pictures}/>
                     </section>
-                    <section className="cont-title-host">
-                        <div className="cont-title">
-                            <p className="home-title">{data.title}</p>
-                            <p className="home-location">{data.location}</p>
-                        </div>
-                        <Host name={data.host.name} picture={data.host.picture}/>
-                    </section>
-                    <section className="cont-tag-rate">
-                        <div className="tags-cont">
-                            {tagsHome}
-                        </div>
-                        <Rate score={data.rating}/>
-                    </section>
+                    <div className="global">
+
+                    
+                        <section className="cont-title-host">
+                            <div className="cont-title">
+                                <p className="home-title">{data.title}</p>
+                                <p className="home-location">{data.location}</p>
+                            </div>
+                            <div className="tags-cont">
+                                {tagsHome}
+                            </div>
+                        </section>
+                        <section className="cont-tag-rate">
+                            <Host name={data.host.name} picture={data.host.picture}/>
+                            <Rate score={data.rating}/>
+                        </section>
+                    </div>
                     <section className="cont-collapse">
                         <div className="description">
                             <Collapse title="Description" content={data.description}/>
@@ -67,6 +76,10 @@ export default function Home() {
                 <Footer />
             </div>
         )
+
+
+       
     }
+    
     
 }

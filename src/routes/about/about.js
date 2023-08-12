@@ -11,7 +11,10 @@ export default function Home() {
         <div className="home">
             <Navbar />
             <main>
-                <Banner image={background}/>
+                <div className="about">
+                    <Banner image={background}/>
+                </div>
+                
                 
                     {DataAbout.map((item) => {
                     return (

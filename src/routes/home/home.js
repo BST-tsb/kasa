@@ -10,7 +10,10 @@ export default function Home() {
         <div className="home">
             <Navbar />
             <main>
-                <Banner image={background} title={'Chez vous, partout et ailleurs'}/>
+                <div className="acc">
+                    <Banner image={background} title={'Chez vous, partout et ailleurs'}/>
+                </div>
+                
                 <Gallery />
             </main>
             <Footer />

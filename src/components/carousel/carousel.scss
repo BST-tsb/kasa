@@ -6,6 +6,10 @@
         top: 40%;
         color: white;
         font-size: 4.95rem;
+        @media (max-width: 767.98px) {
+            font-size: 1.5rem;
+            top: 50%;
+        }
     }
     .right-Arrow {
         position: absolute;
@@ -13,12 +17,19 @@
         top: 40%;
         color: white;
         font-size: 4.95rem;
+        @media (max-width: 767.98px) {
+            font-size: 1.5rem;;
+            top: 50%;
+        }
     }
     .span-slide {
         position: absolute;
         left: 50%;
         bottom: 30px;
         color: white;
+        @media (max-width: 767.98px) {
+            display: none;
+        }
     }
     .img-slide {
         height: 25.9375rem;

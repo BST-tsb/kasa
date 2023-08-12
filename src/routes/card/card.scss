@@ -1,11 +1,15 @@
 .cont-title-host {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 70%;
+    @media (max-width: 767.98px) {
+        width: 100%;
+    }
     .home-location {
         color: #FF6060;
         font-size: 1.125rem;
         font-weight: 500;
+        @media (max-width: 767.98px) {
+            font-size: 0.875rem;
+        }
     }
     .home-title {
         color: #FF6060;
@@ -13,10 +17,73 @@
         font-weight: 500;
         margin-bottom: 0;
         margin-top: 0;
+        @media (max-width: 767.98px) {
+            font-size: 1.500rem;
+
+        }
     }
 }
 .cont-tag-rate {
+    .name-profil {
+        color: #FF6060;
+        font-size: 1.125rem;
+        font-weight: 500;
+        width: 50%;
+    }
+    @media (max-width: 767.98px) {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        
+        margin-top: 20px;
+    }
+    .rate-contenair {
+        margin-top: 20px;
+        display: flex;
+        gap: 5px;
+        justify-content: flex-end;
+        align-items: center;
+        @media (max-width: 767.98px) {
+            margin-top: 0;
+        }
+        
+        .fa-star {
+            font-size: 1.500rem;
+            @media (max-width: 767.98px) {
+                font-size: 1rem;
+            }
+        }
+    }
+    
+}
+.global {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    @media (max-width: 767.98px) {
+        flex-direction: column;
+    }
+}
+.cont-collapse {
+    display: flex;
+    justify-content: space-between;
+    .item:nth-child(1) {
+        margin: 20px 0;
+    }
+    @media (max-width: 767.98px) {
+        flex-direction: column;
+    }
+    .description {
+        width: 47%;
+        @media (max-width: 767.98px) {
+            width: 100%;
+           
+        }
+    }
+    .equipement {
+        width: 47%;
+        @media (max-width: 767.98px) {
+            width: 100%;
+        }
+    }
+
 }

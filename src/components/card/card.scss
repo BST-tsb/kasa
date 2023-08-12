@@ -1,5 +1,10 @@
 .main-card {
+    border-radius: 15px;
     color: white;
+    @media (max-width: 767.98px) {
+        height: 310px;
+
+    }
     article {
         position: relative;
         width: 100%;

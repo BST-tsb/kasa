@@ -1,6 +1,5 @@
 import "./rate.scss";
 export default function Rate(data) {
-    
     const score = data.score;
     const notes = [1, 2, 3, 4, 5];
     return (
@@ -14,4 +13,5 @@ export default function Rate(data) {
         )}
       </div>
     );
+    
 }

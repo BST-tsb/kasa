@@ -33,6 +33,8 @@
     max-height: 2000px;
     transition: all 0.3s cubic-bezier(1,0,1,0);
 }
-.content p {
+.content span {
     margin: 20px;
+    display: flex;
+    flex-direction: column;
 }

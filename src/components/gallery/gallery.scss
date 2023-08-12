@@ -2,9 +2,14 @@
     display: grid;
     grid-gap: 30px;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 1fr);
     background-color: #F6F6F6; 
     box-sizing: border-box;
     border-radius: 15px;
     padding: 3%;
+    @media (max-width: 767.98px) {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+    }
 }

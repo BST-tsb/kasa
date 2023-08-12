@@ -10,8 +10,14 @@
         position: absolute;
         color: white;
         top: 20%;
-        font-size: 48px;
+        font-size: 3rem;
         font-weight: 500;
         left: 25%;
+        @media (max-width: 767.98px) {
+            top: 15%;
+            width: 63%;
+            left: 20px;
+            font-size: 1.5rem;
+        }
     }
 }
